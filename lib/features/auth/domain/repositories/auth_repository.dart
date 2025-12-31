@@ -9,3 +9,8 @@ abstract class AuthRepository {
     String password,
     String name,
   );
+  Future<Either<Failure, Unit>> logout();
+  Future<Either<Failure, User>> getCurrentUser();
+  Future<Either<Failure, bool>> isLoggedIn();
+  Future<Either<Failure, User>> refreshToken(String refreshToken);
+}
